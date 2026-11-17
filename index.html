@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elizah Luna · Christening</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="lock">
+<div id="cover">
+  <div class="eyebrow">You are invited to the christening of</div>
+  <h1>Elizah Luna</h1>
+  <div><span class="dot"></span><span class="dot" style="background:#fff"></span><span class="dot"></span></div>
+  <p>Sunday, November 22, 2026</p>
+  <button class="btn" id="open">Open Invitation ♪</button>
+</div>
+<button id="mus" class="off" aria-label="Toggle music">🎵</button>
+<canvas id="fx"></canvas>
+
+<section class="hero">
+  <div class="eyebrow">The Christening of</div>
+  <h1>Elizah Luna</h1>
+  <div class="arch"><img src="highlight.jpg" alt="Elizah Luna"></div>
+  <p><strong>Sunday, November 22, 2026 · 8:30 AM</strong></p>
+  <p style="color:var(--muted)">You are warmly invited to celebrate with us</p>
+</section>
+
+<section>
+  <div class="card">
+    <h2>A Little Blessing</h2>
+    <p class="verse">“Children are a heritage from the Lord, offspring a reward from him.”<br>— Psalm 127:3</p>
+    <p>With hearts full of joy, we invite you to witness and celebrate the Christening of our beloved Elizah Luna as she receives the Sacrament of Baptism and begins her journey of faith.</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Save the Date</h2>
+    <div class="eyebrow">November 2026</div>
+    <div class="cal" id="cal"></div>
+    <strong>Sunday · 8:30 AM</strong>
+    <div class="count">
+      <div><strong id="d">0</strong><small>DAYS</small></div>
+      <div><strong id="h">0</strong><small>HOURS</small></div>
+      <div><strong id="m">0</strong><small>MINS</small></div>
+      <div><strong id="s">0</strong><small>SECS</small></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Where to Find Us</h2>
+    <div class="venue">
+      <div class="tag">⛪ CEREMONY · 8:30 AM</div>
+      <h3>St. Ignatius Church</h3>
+      <p>Camp Alagar</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=St.+Ignatius+Church+Camp+Alagar+Cagayan+de+Oro">Open Map</a>
+    </div>
+    <div class="venue">
+      <div class="tag">🎉 RECEPTION · AFTER THE CEREMONY • 10:30 AM </div>
+      <h3>Jollibee Limketkai Gateway</h3>
+      <p>In front of USTP</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jollibee+Limketkai+Gateway+Cagayan+de+Oro">Open Map</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Little Moments</h2>
+    <p style="color:var(--muted)">Tap a photo to enlarge</p>
+    <div class="gal" id="gal"><img src="photo1.jpg" alt="Elizah" loading="lazy"><img src="photo2.jpg" alt="Elizah" loading="lazy"><img src="photo3.jpg" alt="Elizah" loading="lazy"><img src="photo4.jpg" alt="Elizah" loading="lazy"><img src="photo5.jpg" alt="Elizah" loading="lazy"><img src="photo6.jpg" alt="Elizah" loading="lazy"><img src="photo7.jpg" alt="Elizah" loading="lazy"><img src="photo8.jpg" alt="Elizah" loading="lazy"></div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Dress Code</h2>
+    <div class="swatches">
+      <div><div class="sw" style="background:#FFF1A8"></div><small>Yellow</small></div>
+      <div><div class="sw" style="background:#A7C7E7"></div><small>Blue</small></div>
+      <div><div class="sw" style="background:#B0E0E6"></div><small>Powder Blue</small></div>
+      <div><div class="sw" style="background:#F8C8DC"></div><small>Pink</small></div>
+    </div>
+    <p>Join us in soft pastel shades of <strong>yellow, blue, powder blue, and pink</strong> to match Elizah’s sweet theme. Comfy, semi-formal attire is perfect.</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Gift Guide</h2>
+    <p>Your presence and prayers are the best gifts for Elizah. If you wish to bless her nonetheless, here are a few ideas:</p>
+    <ul>
+      <li>🧷 Diapers (small to medium)</li>
+      <li>👕 Baby clothes (3 months and up)</li>
+      <li>🧸 Educational toys</li>
+      <li>🧻 Baby wipes and tissues</li>
+      <li>💛 Monetary gift via GCash</li>
+    </ul>
+    <p style="margin-top:18px"><strong>Scan to send via GCash</strong></p>
+    <img class="qr" src="gcash-qr.jpg" alt="GCash QR code">
+  </div>
+</section>
+
+<footer>
+  <h2>See you there!</h2>
+  Elizah Luna · Christening · Nov 22, 2026 · 8:30 AM
+</footer>
+
+<div id="lb"><img alt=""></div>
+
+<script>
+(function(){
+  var cal=document.getElementById('cal'),h='';
+  ['SUN','MON','TUE','WED','THU','FRI','SAT'].forEach(function(x){h+='<b>'+x+'</b>'});
+  for(var i=1;i<=30;i++){h+='<span'+(i===22?' class="on"':'')+'>'+i+'</span>'}
+  cal.innerHTML=h;
+  var target=new Date('2026-11-22T08:30:00+08:00').getTime();
+  function tick(){
+    var t=Math.max(0,target-Date.now());
+    document.getElementById('d').textContent=Math.floor(t/864e5);
+    document.getElementById('h').textContent=Math.floor(t%864e5/36e5);
+    document.getElementById('m').textContent=Math.floor(t%36e5/6e4);
+    document.getElementById('s').textContent=Math.floor(t%6e4/1e3);
+  }
+  tick();setInterval(tick,1000);
+
+  /* falling bubbles */
+  var cv=document.getElementById('fx'),cx=cv.getContext('2d'),W=0,H=0,bubs=[];
+  var COLS=[[63,116,201],[246,200,61],[130,180,255],[255,255,255],[246,200,61]];
+  function size(){var r=window.devicePixelRatio||1;W=innerWidth;H=innerHeight;cv.width=W*r;cv.height=H*r;cx.setTransform(r,0,0,r,0,0)}
+  size();addEventListener('resize',size);
+  function mk(temp,fromTop){
+    return{x:Math.random()*W,y:fromTop?-30-Math.random()*H*0.3:Math.random()*H,r:6+Math.random()*20,
+      vy:(temp?1.6:0.35)+Math.random()*(temp?2:0.9),ph:Math.random()*6.28,sw:0.4+Math.random()*0.8,
+      c:COLS[Math.floor(Math.random()*COLS.length)],temp:temp}
+  }
+  var N=Math.round(Math.min(34,Math.max(18,innerWidth/28)));
+  for(var i=0;i<N;i++)bubs.push(mk(false,false));
+  function burst(){for(var i=0;i<45;i++)bubs.push(mk(true,true))}
+  var last=0;
+  function draw(ts){
+    var dt=Math.min(2.5,(ts-last)/16.7||1);last=ts;
+    cx.clearRect(0,0,W,H);
+    for(var i=bubs.length-1;i>=0;i--){
+      var b=bubs[i];b.y+=b.vy*dt;b.ph+=0.02*dt;
+      var x=b.x+Math.sin(b.ph)*b.sw*20;
+      if(b.temp&&b.vy<0&&b.y<-60){bubs.splice(i,1);continue}
+      if(b.y-b.r>H){if(b.temp){bubs.splice(i,1);continue}Object.assign(b,mk(false,true))}
+      var c=b.c,g=cx.createRadialGradient(x-b.r*.3,b.y-b.r*.3,b.r*.1,x,b.y,b.r);
+      g.addColorStop(0,'rgba('+c[0]+','+c[1]+','+c[2]+',0.12)');
+      g.addColorStop(1,'rgba('+c[0]+','+c[1]+','+c[2]+',0.38)');
+      cx.beginPath();cx.arc(x,b.y,b.r,0,6.283);cx.fillStyle=g;cx.fill();
+      cx.lineWidth=1.5;cx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+',0.55)';cx.stroke();
+      cx.beginPath();cx.arc(x-b.r*.35,b.y-b.r*.35,b.r*.22,0,6.283);cx.fillStyle='rgba(255,255,255,0.75)';cx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(draw);
+  
+  addEventListener('pointerdown',function(e){
+    if(e.target.closest('button,a,#lb'))return;
+    for(var i=0;i<8;i++){var b=mk(true,true);b.x=e.clientX+(Math.random()-.5)*60;b.y=e.clientY-Math.random()*40;b.vy=-1.5-Math.random()*2;b.r=4+Math.random()*10;bubs.push(b)}
+  });
+  
+  var secs=document.querySelectorAll('section:not(.hero),footer');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.12});
+    secs.forEach(function(s){s.classList.add('rv');io.observe(s)});
+  }
+
+  
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+  document.getElementById('gal').addEventListener('click',function(e){
+    if(e.target.tagName==='IMG'){lbi.src=e.target.src;lb.classList.add('on')}
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+
+  
+  var AC=window.AudioContext||window.webkitAudioContext,ctx,master,playing=false,timer;
+  var F={C:523.25,D:587.33,E:659.25,F:698.46,G:783.99,A:880};
+  var seq='C C G G A A G-F F E E D D C-G G F F E E D-G G F F E E D-C C G G A A G-F F E E D D C'.replace(/-/g,' - ').split(' ');
+  var step=0.62;
+  function note(f,t){
+    [[1,0.22],[2,0.07]].forEach(function(p){
+      var o=ctx.createOscillator(),g=ctx.createGain();
+      o.type='sine';o.frequency.value=f*p[0];
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(p[1],t+0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+1.4);
+      o.connect(g);g.connect(master);o.start(t);o.stop(t+1.5);
+    });
+  }
+  function loop(){
+    if(!playing)return;
+    var t0=ctx.currentTime+0.1,k=0;
+    seq.forEach(function(n,i){
+      if(n!=='-'){note(F[n],t0+k*step);k++}else{k+=1}
+    });
+    var total=k*step+1.5;
+    timer=setTimeout(loop,total*1000);
+  }
+  var btn=document.getElementById('mus');
+  function start(){
+    try{
+      if(!ctx){ctx=new AC();master=ctx.createGain();master.gain.value=0.9;master.connect(ctx.destination)}
+      if(ctx.state==='suspended')ctx.resume();
+      playing=true;btn.classList.remove('off');loop();
+    }catch(e){}
+  }
+  function stop(){playing=false;clearTimeout(timer);btn.classList.add('off');if(ctx){try{ctx.close()}catch(e){}ctx=null}}
+  btn.addEventListener('click',function(){playing?stop():start()});
+  document.getElementById('open').addEventListener('click',function(){
+    document.getElementById('cover').classList.add('gone');burst();
+    document.body.classList.remove('lock');
+    start();
+  });
+})();
+</script>
+</body>
+</html>
