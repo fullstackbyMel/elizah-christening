@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Elizah Luna · Christening</title>
+<title>Elizah Luna · Christening & Birthday</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
@@ -12,17 +12,23 @@
 </head>
 <body class="lock">
 <div id="cover">
-  <div class="eyebrow">You are invited to the christening of</div>
-  <h1>Elizah Luna</h1>
-  <div><span class="dot"></span><span class="dot" style="background:#fff"></span><span class="dot"></span></div>
-  <p>Sunday, November 22, 2026</p>
-  <button class="btn" id="open" data-umami-event="open-invitation">Open Invitation ♪</button>
+  <button id="open" aria-label="Tap to open the invitation" data-umami-event="open-invitation">
+    <div class="env" id="env">
+      <div class="ebtn">Open Invitation</div>
+      <div class="eb"></div>
+      <div class="ef"></div>
+      <div class="efl"></div>
+      <div class="es">💛</div>
+      <div class="et">You are invited!</div>
+      
+    </div>
+  </button>
 </div>
 <button id="mus" class="off" aria-label="Toggle music">🎵</button>
 <canvas id="fx"></canvas>
 
 <section class="hero">
-  <div class="eyebrow">The Christening of</div>
+  <div class="eyebrow">The Christening and 1st Birthday of</div>
   <h1>Elizah Luna</h1>
   <div class="arch"><img src="highlight.jpg" alt="Elizah Luna" fetchpriority="high" decoding="async"></div>
   <p><strong>Sunday, November 22, 2026 · 8:30 AM</strong></p>
@@ -109,7 +115,7 @@
 
 <footer>
   <h2>See you there!</h2>
-  Elizah Luna · Christening · Nov 22, 2026 · 8:30 AM
+  Elizah Luna · Christening & 1st Birthday · Nov 22, 2026 · 8:30 AM
 </footer>
 
 <div id="lb"><img alt=""></div>
@@ -214,10 +220,16 @@
   }
   function stop(){playing=false;clearTimeout(timer);btn.classList.add('off');if(ctx){try{ctx.close()}catch(e){}ctx=null}}
   btn.addEventListener('click',function(){playing?stop():start()});
+    var opened=false;
   document.getElementById('open').addEventListener('click',function(){
-    document.getElementById('cover').classList.add('gone');burst();
-    document.body.classList.remove('lock');
+    if(opened)return;opened=true;
+    document.getElementById('env').classList.add('open');
     start();
+    setTimeout(function(){
+      document.getElementById('cover').classList.add('gone');
+      document.body.classList.remove('lock');
+      burst();
+    },100);
   });
 })();
 </script>

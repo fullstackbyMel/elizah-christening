@@ -67,3 +67,22 @@ footer{padding:36px 22px 90px;color:var(--muted)}
 .rv.in{opacity:1;transform:none}
 .venue .tag,.count strong{display:block}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#fx{display:none}}
+/* ===== PINK ENVELOPE COVER ===== */
+#cover{background-color:#ffc4d8;background-image:radial-gradient(rgba(255,255,255,.7) 2.5px,transparent 3px),radial-gradient(rgba(255,120,170,.25) 2.5px,transparent 3px);background-size:30px 30px;background-position:0 0,15px 15px;color:#8a2a52}
+#open{background:none;border:0;padding:0;cursor:pointer;animation:none;box-shadow:none}
+.env{position:relative;width:min(80vw,320px);aspect-ratio:3/2;perspective:900px;animation:wig 2.6s ease-in-out infinite;filter:drop-shadow(0 8px 14px rgba(194,51,107,.35))}
+.env.open{animation:none}
+@keyframes wig{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) translateY(-6px)}}
+.env>*{position:absolute}
+.eb{inset:0;background:#f48fb1;border-radius:10px}
+.ef{inset:0;background:#ffb3cd;border-radius:10px;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:3}
+.efl{left:0;top:0;width:100%;height:58%;background:#ff7fa8;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:4}
+.env.open .efl{animation:flap .7s ease forwards}
+@keyframes flap{from{transform:rotateX(0)}to{transform:rotateX(180deg)}}
+.es{left:50%;top:54%;transform:translate(-50%,-50%);z-index:6;font-size:1.8rem;transition:opacity .3s}
+.env.open .es{opacity:0}
+.et{left:0;right:0;bottom:12%;text-align:center;z-index:5;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.15rem;color:#c2336b}
+@media (prefers-reduced-motion:reduce){.env.open .efl{transform:rotateX(180deg)}}
+.ebtn{left:50%;top:70%;transform:translate(-50%,-50%);z-index:6;background:#c2336b;color:#fff;font-weight:700;font-size:.85rem;padding:8px 18px;border-radius:999px;white-space:nowrap;animation:pl2 1.8s ease-in-out infinite;transition:opacity .3s}
+.env.open .ebtn{opacity:0;animation:none}
+.hint{margin-top:0px}
